@@ -486,9 +486,17 @@ class CalibrationState:
                 self.probe.probe_session.start_probe_session(None)
             try:
                 # probe switch body
-                switch_zero = self._probe_on_site(self.probe.mcu_probe,
+                switch_zero_1 = self._probe_on_site(self.probe.mcu_probe,
                                                   switch_site,
                                                   check_probe=True)
+                switch_zero_2 = self._probe_on_site(self.probe.mcu_probe,
+                                                  switch_site,
+                                                  check_probe=True)
+                switch_zero_3 = self._probe_on_site(self.probe.mcu_probe,
+                                                  switch_site,
+                                                  check_probe=True)
+                switch_zero = (switch_zero_1 + switch_zero_2 + switch_zero_3)/3
+                
                 # probe bed position
                 probe_site = self._add_probe_offset(bed_site)
                 probe_zero_1 = self._probe_on_site(self.probe.mcu_probe,
