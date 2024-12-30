@@ -491,7 +491,7 @@ class CalibrationState:
                 switch_zero_2 = self._probe_on_site(self.probe.mcu_probe,
                                                   switch_site,
                                                   check_probe=True)
-                switch_zero = (switch_zero_1 + swotch_zero_2)/2
+                switch_zero = (switch_zero_1 + switch_zero_2)/2
                 
                 # probe bed position
                 probe_site = self._add_probe_offset(bed_site)
