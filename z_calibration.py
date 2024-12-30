@@ -486,7 +486,7 @@ class CalibrationState:
                 self.probe.probe_session.start_probe_session(None)
             try:
                 # probe switch body
-                switch_zero = self._probe_on_site(self.z_endstop,
+                switch_zero = self._probe_on_site(self.probe.mcu_probe,
                                                   switch_site,
                                                   check_probe=True)
                 # probe bed position
