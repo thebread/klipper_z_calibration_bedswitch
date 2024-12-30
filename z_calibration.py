@@ -16,7 +16,7 @@ class ZCalibrationHelper:
         self.position_z_endstop = None
         self.config = config
         self.printer = config.get_printer()
-        self.switch_offset = config.getfloat('switch_offset', None, above=0.)
+        self.switch_offset = config.getfloat('switch_offset', None)
         # TODO: remove: max_deviation is deprecated
         self.max_deviation = config.getfloat('max_deviation', None, above=0.)
         config.deprecate('max_deviation')
