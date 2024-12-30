@@ -491,9 +491,16 @@ class CalibrationState:
                                                   check_probe=True)
                 # probe bed position
                 probe_site = self._add_probe_offset(bed_site)
-                probe_zero = self._probe_on_site(self.probe.mcu_probe,
-                                                 probe_site,
-                                                 check_probe=True)
+                probe_zero_1 = self._probe_on_site(self.probe.mcu_probe,
+                                                   probe_site,
+                                                   check_probe=True)
+                probe_zero_2 = self._probe_on_site(self.probe.mcu_probe,
+                                                   probe_site,
+                                                   check_probe=True)
+                probe_zero_3 = self._probe_on_site(self.probe.mcu_probe,
+                                                   probe_site,
+                                                   check_probe=True)
+                probe_zero = (probe_zero_1 + probe_zero_2 + probe_zero_3)/3
             finally:
                 # end probe session
                 try:
